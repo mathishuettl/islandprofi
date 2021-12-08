@@ -1,0 +1,59 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+
+.button {
+  @apply relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md bg-gray-300;
+
+  &:hover {
+    @apply bg-gray-400;
+  }
+
+  &:focus {
+    @apply outline-none ring-2 ring-offset-2 ring-gray-500;
+  }
+
+  &.primary {
+    @apply text-white bg-indigo-600;
+
+    &:hover {
+      @apply bg-indigo-700;
+    }
+    &:focus {
+      @focus ring-indigo-500;
+    }
+  }
+}
+
+.card {
+  @apply bg-white px-4 py-5 border border-gray-200 sm:px-6 mb-8;
+}
+
+.input {
+  @apply shadow-sm block w-full border border-gray-300 rounded-md px-2 py-1;
+
+  &:focus {
+    @apply ring-indigo-500 border-indigo-500;
+  }
+}
+
+.label {
+  @apply block text-sm font-medium text-gray-700;
+}
+
+.form-group {
+  @apply mb-3;
+}
+
+.alert {
+  @apply px-4 py-5 border border-gray-200 sm:px-6 mb-8;
+
+  &.success {
+    @apply bg-green-400 text-white;
+  }
+
+  &.danger {
+    @apply bg-red-400 text-white;
+  }
+}
