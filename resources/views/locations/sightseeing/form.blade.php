@@ -1,6 +1,10 @@
 
 @extends('layouts.app')
 
+@section("heading")
+  {{ isset($sightseeingspot) ? "Sightseeing Spot bearbeiten" : "Sightseeing Spot hinzufügen" }}
+@endsection
+
 @section('content')
   <div class="card">
     <form action="{{ isset($sightseeingspot) ? route('sightseeingspot.edit.submit', $sightseeingspot->id) : route('sightseeingspot.add.submit') }}" method="POST">
@@ -14,7 +18,7 @@
           <div class="form-group">
             <label for="title" class="label">Beschreibung</label>
             <div class="mt-1">
-              <textarea name="description" id="description" class="input">{{ isset($sightseeingspot) ? $sightseeingspot->description : old('description') }}</textarea>
+              <textarea rows="6" name="description" id="description" class="input">{{ isset($sightseeingspot) ? $sightseeingspot->description : old('description') }}</textarea>
             </div>
           </div>
         </div>
@@ -22,7 +26,7 @@
           <div class="form-group">
             <label for="title" class="label">Kontaktinformation</label>
             <div class="mt-1">
-              <textarea name="description" id="description" class="input">{{ isset($sightseeingspot) ? $sightseeingspot->description : old('description') }}</textarea>
+              <textarea rows="6" name="description" id="description" class="input">{{ isset($sightseeingspot) ? $sightseeingspot->description : old('description') }}</textarea>
             </div>
           </div>
         </div>
