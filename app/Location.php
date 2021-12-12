@@ -28,6 +28,8 @@ class Location extends Model
     switch ($this->type) {
       case "App\SightseeingSpot":
         return "Sightseeing Spot";
+      case "App\PrebookedActivity":
+        return "Prebooked Activity";
       default:
         return "not defined";
     }
@@ -37,6 +39,8 @@ class Location extends Model
     switch ($this->type) {
       case "App\SightseeingSpot":
         return route("sightseeingspot.edit", $this->spot_id);
+      case "App\PrebookedActivity":
+        return route("prebookedactivity.edit", $this->spot_id);
       default:
         return "unknown";
     }

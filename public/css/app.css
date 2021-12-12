@@ -31933,6 +31933,13 @@ video {
   @focus ring-indigo-500;
 }
 
+.button.small {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
 .card {
   margin-bottom: 2rem;
   border-width: 1px;

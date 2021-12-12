@@ -46,3 +46,11 @@ Route::get("/sightseeing-spot/add", "SightseeingController@add")->name("sightsee
 Route::get("/sightseeing-spot/{sightseeingspot}", "SightseeingController@edit")->name("sightseeingspot.edit");
 Route::post("/sightseeing-spot/add", "SightseeingController@add_submit")->name("sightseeingspot.add.submit");
 Route::post("/sightseeing-spot/{sightseeingspot}", "SightseeingController@edit_submit")->name("sightseeingspot.edit.submit");
+
+
+
+Route::get("/prebooked-activities", "PrebookedActivityController@index")->name("prebookedactivities.index");
+Route::get("/prebooked-activity/add", "PrebookedActivityController@add")->name("prebookedactivity.add");
+Route::get("/prebooked-activity/{prebookedactivity}", "PrebookedActivityController@edit")->name("prebookedactivity.edit");
+Route::post("/prebooked-activity/add", "PrebookedActivityController@add_submit")->name("prebookedactivity.add.submit");
+Route::post("/prebooked-activity/{prebookedactivity}", "PrebookedActivityController@edit_submit")->name("prebookedactivity.edit.submit");
