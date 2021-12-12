@@ -24,6 +24,10 @@
       @focus ring-indigo-500;
     }
   }
+
+  &.small {
+    @apply px-2 py-1;
+  }
 }
 
 .card {

@@ -47,6 +47,8 @@ class SightseeingController extends LocationController
     $location->update(["spot_id" => $sightseeingspot->id]);
     $request->session()->flash("alert", ["message" => "Der Sightseeing Spot wurde erfolgreich angelegt", "type" => "success"]);
 
+    $this->handleFileUploads($request, $location);
+
     return redirect()->route("sightseeingspot.edit", $sightseeingspot->id);
   }
 
@@ -54,7 +56,8 @@ class SightseeingController extends LocationController
     return view("locations.sightseeing.form", [
       "parishes" => Parish::all(),
       "sightseeingspot" => $sightseeingspot,
-      "location" => $sightseeingspot->location
+      "location" => $sightseeingspot->location,
+      "images" => $this->getLocationImages($sightseeingspot->location->id)
     ]);
   }
 
@@ -65,6 +68,8 @@ class SightseeingController extends LocationController
 
     $sightseeingspot->location->update($data);
     $sightseeingspot->update($data);
+
+    $this->handleFileUploads($request, $sightseeingspot->location);
 
     $request->session()->flash("alert", ["message" => "Der Sightseeing Spot wurde erfolgreich aktualisiert", "type" => "success"]);
 

@@ -6,6 +6,7 @@
         @foreach ($regions as $region)
           <option value="">Alle</option>
           <option value="App\SightseeingSpot" {{ isset($_GET['type']) && $_GET['type'] === 'App\SightseeingSpot' ? 'selected' : '' }}>Sightseeing Spots</option>
+          <option value="App\PrebookedActivity" {{ isset($_GET['type']) && $_GET['type'] === 'App\PrebookedActivity' ? 'selected' : '' }}>Prebooked Activity</option>
         @endforeach
       </select>
     </div>

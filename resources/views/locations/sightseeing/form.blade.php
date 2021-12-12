@@ -7,7 +7,7 @@
 
 @section('content')
   <div class="card">
-    <form action="{{ isset($sightseeingspot) ? route('sightseeingspot.edit.submit', $sightseeingspot->id) : route('sightseeingspot.add.submit') }}" method="POST">
+    <form enctype="multipart/form-data" action="{{ isset($sightseeingspot) ? route('sightseeingspot.edit.submit', $sightseeingspot->id) : route('sightseeingspot.add.submit') }}" method="POST">
       @csrf
       <input type="hidden" name="type" value="App\SightseeingSpot" />
 
@@ -31,6 +31,8 @@
           </div>
         </div>
       </div>
+
+      @include("locations.img-upload")
       <button type="submit" class="button primary">Speichern</button>
     </form>
   </div>
